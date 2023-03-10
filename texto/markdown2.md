@@ -360,4 +360,149 @@ int main()
     return 0;
 }
 ```
+#PUNTEROS
+
+
+Un puntero es una variable que almacena la dirección de memoria de un objeto. Los punteros se usan ampliamente en C y C++ para tres propósitos principales:
+
+- para asignar nuevos objetos en el montón,
+- para pasar funciones a otras funciones
+- para iterar sobre elementos en matrices u otras estructuras   de datos.
+
+##Punteros Básicos
+Un puntero básico es un puntero cuya duración no está controlada por un objeto encapsulado, como un puntero inteligente. Se puede asignar un puntero básico a la dirección de otra variable que no sea de puntero, o bien se le puede asignar un valor de nullptr. Un puntero al que no se ha asignado un valor contiene datos aleatorios.
+
+También se puede desreferenciar un puntero para recuperar el valor del objeto al que apunta. El operador de acceso a miembros proporciona acceso a los miembros de un objeto.
+##Punteros + Matriz
+
+**EJEMPLOS DE PUNTEROS + MATRICES**
+```c++
+void showVector(int v[], int c){ //para vectores
+    for (int i = 0; i < c; i++)
+        cout<<v[i]<<"\t"; 
+    cout<<endl;
+} 
+void showPtrVector(int *pv, int c){ //para vectores usando puntero
+    for (int i = 0; i < c; i++)
+        cout<<pv[i]<<"\t"; 
+    cout<<endl;
+}
+void showMatriz(int m[][3], int f, int c){ //para matriz
+    for (int i = 0; i < f; i++)
+    {
+        for (int j = 0; j < c; j++)
+            cout<< m[i][j] <<"\t"; 
+        cout<< endl;
+    }
+} 
+void showMatrizComoVector(int mv[], int f, int c){ //para matriz
+    for (int i = 0; i < f; i++)
+    {
+        for (int j = 0; j < c; j++)
+            cout<< mv[i*c+j] <<"\t";    // m[i][j]
+        cout<< endl;
+    }
+} 
+void showPtrMatriz(int *p, int f,int c)
+{
+   for (int i = 0; i < f; i++)
+   {
+        for (int j = 0; j < c; j++)
+            cout<< *(p+i * c+j) <<"\t";   // m[i][j]
+        cout<< endl;
+   }
+}
+void showVectorPtrMatriz(int *vp[], int f,int c)
+{
+   for (int i = 0; i < f; i++)
+   {
+        for (int j = 0; j < c; j++)
+            cout<< vp[i][j] <<"\t";   // m[i][j]
+        cout<< endl;
+   }
+}
+void showPtrDobleMatriz(int **pd, int f,int c)
+{
+   for (int i = 0; i < f; i++)
+   {
+        for (int j = 0; j < c; j++)
+            cout<< pd[i][j] <<"\t";   
+        cout<< endl;
+   }
+}
+
+/// Mas opciones para matrices
+void getMatriz(int **matriz)
+{
+    int fil = 3; //(sizeof(matriz)/sizeof(matriz[0]));
+    int col = 2; //(sizeof(matriz[0])/sizeof(matriz[0][0]));
+    
+    cout<<"----"<<endl;
+    cout<<(sizeof(**matriz))<<endl;
+    cout<<(sizeof(&matriz)/sizeof(&matriz[0]))<<endl;
+    cout<<(sizeof(*matriz[0])/sizeof(matriz[0][0]))<<endl;
+    cout<<"----"<<endl;
+
+    for (int i=0; i<fil; i++)
+    {
+        for(int j=0;j<col; j++)
+            cout<<matriz[i][j]<<" ";
+        cout <<endl;
+    }
+}
+void setMatriz(int **&matriz, int fil, int col)
+{
+    for (int i=0; i<fil; i++)
+        for(int j=0;j<col; j++)
+                matriz[i][j]=0;
+}
+void showArrayVector(){
+    int ai[]={1,3,5,7,9};
+    int *pi;
+    pi = ai;
+    *(pi+0) = 10;   // cambiar valor
+    showPtrVector(pi,5);
+}
+```
+##MEMORIA CON PUNTEROS
+
+con la herramienta puntero nos servira para poder reservar espacios de memoria que posteriormente seran usados. Para ello se pueden usar distintas funciones que reservaran ese esapacio de memoria.
+
+**Ejemplo de reservar espacios de memoria con punteros**
+
+```c++ 
+  #include <iostream>
+
+    using namespace std;
+
+    int **crearMatrizMalloc(int f, int c)
+    {  
+        int **m=NULL;
+        m = (int **) malloc(f*sizeof(int *));
+        for (int i = 0; i < f; i++)
+            m[i] = (int *) malloc(c*sizeof(int));
+        
+        return m;
+    }
+    int **crearMatrizCalloc(int f, int c)
+    {
+        int **m=NULL;
+        m = (int **) calloc(f, sizeof(int *));
+        for (int i = 0; i < f; i++)
+            m[i] = (int *) calloc(c, sizeof(int));
+        
+        return m;
+    }
+    int **crearMatrizNew(int f, int c)
+    {   //int i = new int(10);    //heap   --> delete
+        //int i = 10;             //stack
+        int **m=NULL;
+        m = new int*[f];
+        for (int i = 0; i < f; i++)
+            m[i] = new int[c];
+
+        return m;
+    }
+```
+
 
