@@ -143,9 +143,10 @@ void forMain()
 }
 ```
 
-**esta clase de funciones y procedimientos se uso para incluir los bucles**
+**esta clase de funciones y procedimientos se uso para incluir los bucles.**
 
-##Bucles
+## Bucles
+
 El for es un poco mas estricto, es decir, solo se ejecuta algo secuencial, mientas que el while se ejecuta en base a una serie de repeticiones, como por ejemplo al hacer una condicion
 
 El en while siempre poner un contador, un operador ternario es un proceso para simplificar codigo, tiene 3 partes: la condicion, el entonces y el caso contrario, ?=if, :=else.
@@ -265,11 +266,9 @@ void signosWhile()
 
 **Finalizamos con un repaso de archivos**
 
-##Archivos
+## Archivos
 Es el acceso a un archivo, de algun lugar del almacenamiento del PC. Es importante realizar una correcta apertura y cierre de este archivo. Sobre estos archivos re pueden realizar varias operaciones, de apertura, de escritura, lectura y cierre. Si el archivo queda abierto, no puede ser usado por otro programa.
 Para la apertura del archivo, lo podemoa hacer asi:
-
-                        PONER EJEMPLO
 
 el nombre-fichero es la ruta del archivo
 
@@ -277,7 +276,7 @@ El modo, sera el uso que se le va a dar al archivo, tenemos que:
 r = abre un fichero para leerlo
 w = abre un fichero para escritura, si no existe l crea, y si ya existe, lo destruye y crea otro nuevo
 a = abre un fichero para anadir datos al final
-+ = abre el archivo para leer y escribir
+'+' = abre el archivo para leer y escribir
 b = el fichero es de tipo binario
 t = ficheros de tipo texto
 
@@ -360,6 +359,7 @@ int main()
     return 0;
 }
 ```
+
 #PUNTEROS
 
 ![Punteros](https://i0.wp.com/somoshackersdelaprogramacion.es/wp-content/uploads/2022/06/puntero.png?resize=596%2C199&ssl=1)
@@ -369,17 +369,17 @@ Un puntero es una variable que almacena la dirección de memoria de un objeto. Lo
 - para pasar funciones a otras funciones
 - para iterar sobre elementos en matrices u otras estructuras   de datos.
 
-##Punteros Básicos
+## Punteros Básicos
 Un puntero básico es un puntero cuya duración no está controlada por un objeto encapsulado, como un puntero inteligente. Se puede asignar un puntero básico a la dirección de otra variable que no sea de puntero, o bien se le puede asignar un valor de nullptr. Un puntero al que no se ha asignado un valor contiene datos aleatorios.
 
 También se puede desreferenciar un puntero para recuperar el valor del objeto al que apunta. El operador de acceso a miembros proporciona acceso a los miembros de un objeto.
 
-##Los punteros y el ampersand &
+## Los punteros y el ampersand &
 El ampersand es un operador de C/C++ y es comúnmente utilizado para los punteros.
 Este operador nos permite obtener la dirección de memoria de una variable cualquiera y es justo esto
 (la dirección en memoria) lo que utilizan los punteros para referenciar valores.
 
-##Los apuntadores y el asterisco *
+## Los apuntadores y el asterisco *
 El asterisco es, por decirlo de alguna forma, el operador por excelencia de los punteros.
 SU utilidad radica en que si el valor de dicho apuntador corresponde a una dirección de memoria, el
 asterisco nos permite resolverla y acceder al valor almacenado allí. Viéndolo desde otro enfoque, un
@@ -476,16 +476,14 @@ void showArrayVector(){
     showPtrVector(pi,5);
 }
 ```
-##MEMORIA CON PUNTEROS
+
+## MEMORIA CON PUNTEROS
 
 ![MEMORIA](https://1.bp.blogspot.com/-gKWUcwIKWWU/VvPtKUAIFjI/AAAAAAAAFRc/WLCqWfSxlZ4ioocmBuFS3KaRhzs0I13OA/w1200-h630-p-k-no-nu/Difference%2Bbetween%2Bstack%2Band%2Bheap%2Bmemory%2Bin%2BJava.gifG)
 
-
-
-
 con la herramienta puntero nos servira para poder reservar espacios de memoria que posteriormente seran usados. Para ello se pueden usar distintas funciones que reservaran ese esapacio de memoria.
 
-**Ejemplo de reservar espacios de memoria con punteros**
+**Ejemplo de reservar espacios de memoria con punteros.**
 
 ```c++ 
   #include <iostream>
@@ -522,5 +520,165 @@ con la herramienta puntero nos servira para poder reservar espacios de memoria q
     }
 ```
 
+# ESTRUCTURAS 
 
+Las estructuras de datos en C++ se pueden entender como un tipo de dato compuesto (no complejo). Las estructuras de datos permiten almacenar de manera ordenada una serie de valores dados en una misma variable. Las estructuras de datos más comunes son los arrays, que pueden ser unidimensionales (de una dimensión) también conocidos como vectores, o multidimensionales (de varias dimensiones) también conocidos como matrices, aunque hay otras un poco más diferentes como son struct, las enumeraciones y los punteros.
+
+```c++ 
+struct Mascota
+{
+    string tipo;
+    string nombre;
+};
+
+struct Alumno
+{
+    int  id;
+    int  edad;
+    char nombre[20];
+    Mascota mascotita;
+};
+```
+# COLAS
+
+![colas](https://1.bp.blogspot.com/-yU24HlEAb5k/UJFLeeCJEtI/AAAAAAAAAUg/nog3KdbtCg0/w1200-h630-p-k-no-nu/colas+en+c%252B%252B.png)
+
+Las colas se utilizan en sistemas informáticos, transportes y operaciones de investigación (entre otros), dónde los objetos, personas o eventos son tomados como datos que se almacenan y se guardan mediante colas para su posterior procesamiento. Este tipo de estructura de datos abstracta se implementa en lenguajes orientados a objetos mediante clases, en forma de listas enlazadas.
+
+```C++
+struct nodo              //  [ # ]>-->
+{
+    int nro;
+    struct nodo *sgte;
+};
+ 
+struct cola             //  <--< >-->   
+{
+    nodo *delante;
+    nodo *atras  ;
+};
+ 
+ 
+void encolar( struct cola &q, int valor )
+{
+     struct nodo *aux = new(struct nodo);
+     
+     aux->nro = valor;
+     aux->sgte = NULL;
+     
+     if( q.delante == NULL)
+         q.delante = aux;   // encola el primero elemento
+     else
+         (q.atras)->sgte = aux;
+     q.atras = aux;        // puntero que siempre apunta al ultimo elemento
+}
+ 
+int desencolar( struct cola &q )
+{
+     int num ;
+     struct nodo *aux ;
+     
+     aux = q.delante;      // aux apunta al inicio de la cola
+     num = aux->nro;
+     q.delante = (q.delante)->sgte;
+     delete(aux);          // libera memoria a donde apuntaba aux
+     
+     return num;
+}
+ 
+void muestraCola( struct cola q )
+{
+     struct nodo *aux;
+     aux = q.delante;
+         
+     while( aux != NULL )
+     {
+            cout<<"   "<< aux->nro ;
+            aux = aux->sgte;
+     }    
+}
+ 
+void vaciaCola( struct cola &q)
+{
+     struct nodo *aux;
+     
+     while( q.delante != NULL)
+     {
+            aux = q.delante;
+            q.delante = aux->sgte;
+            delete(aux);
+     }
+     q.delante = NULL;
+     q.atras   = NULL;
+}
+```
+
+# PILAS
+
+![PILAS](https://4.bp.blogspot.com/-Hnka4CO97Kk/UJFJU-a91BI/AAAAAAAAAUI/PjUC6P7J-0g/s320/Pilas%2Ben%2Bc%2B%2B.jpg&container=blogger&gadget=a&rewriteMime=image
+)
+
+Una pila (stack en inglés) es una lista ordinal o estructura de datos en la que el modo de acceso a sus elementos es de tipo LIFO (del inglés Last In First Out, último en entrar, primero en salir) que permite almacenar y recuperar datos. Esta estructura se aplica en multitud de ocasiones en el área de informática debido a su simplicidad y ordenación implícita de la propia estructura.
+Para el manejo de los datos se cuenta con dos operaciones básicas: apilar (push), que coloca un objeto en la pila, y su operación inversa, retirar (o desapilar, pop), que retira el último elemento apilado.
+
+```c++
+struct nodo{
+    int nro;
+    struct nodo *sgte;
+};
+ 
+typedef nodo *ptrPila;   // creando nodo tipo puntero( tipo de valor )
+//struct nodo1 ptrPila1;   
+
+void push( ptrPila &p, int valor )      // Apilar
+{
+     ptrPila aux = new(struct nodo);  // apuntamos al nuevo nodo creado
+     aux->nro = valor;
+     
+     aux->sgte = p ;
+     p = aux ;
+     cout <<" << apilado >> " <<endl;
+}
+ 
+void pop( ptrPila &p )   // Desapilar
+{
+     ptrPila aux;
+     
+     aux = p ;
+     //num = aux->nro;   // asignamos el primer vamor de la pila
+     cout <<" << desapilado >> " << aux->nro <<endl;
+     
+     p = aux->sgte ;
+     delete(aux);
+}
+ 
+void mostrar_pila( ptrPila p )
+{
+     ptrPila aux;
+     aux = p;     // apunta al inicio de la lista
+     
+     while( aux !=NULL )
+     {
+        cout<<"\t"<< aux->nro <<endl;
+        aux = aux->sgte;
+     }    
+}
+ 
+void destruir_pila( ptrPila &p)
+{
+     ptrPila aux;
+     
+     while( p != NULL)
+     {
+           aux = p;
+           p = aux->sgte;
+           cout<<"despachando: "<< aux->nro <<"\t";
+           delete(aux);
+     }
+     cout<<"\n\n\t\t Pila despachada...\n\n";
+}
+```
+# LISTA
+
+![LISTA](https://www.monografias.com/trabajos90/listas-c/image001.jpg)
 
