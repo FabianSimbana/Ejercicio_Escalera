@@ -1,9 +1,9 @@
-#2do Bimestre
+# 2do Bimestre
 ---
 
-#**Practica temas primer bimestre**
+# **Practica temas primer bimestre**
 
-##Conceptos basicos
+## Conceptos basicos
 
 ## Librerias
 
@@ -863,8 +863,6 @@ void eliminaRepetidos(Tlista &lista, int valor)
 
 # ARBOLES
 
-![ARBOL](data:image/png;base64,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)
-
 Un árbol es una estructura de datos no lineal puesto que cada elemento apunta a uno o varios
 elementos del mismo tipo; esto es dado un elemento, no hay un único camino a seguir.
 El elemento que apunta a otro es llamado padre/raíz, mientras que el elemento apuntado se conoce
@@ -998,4 +996,107 @@ int main()
 
 # Autómata Finito Determinista
 
+Autómata Finito Determinista - ADF
 
+Un autómata finito determinista es una quíntupla que denotaremos de manera genérica por M=(Q,?,q0,?,F), donde:
+- Q       es un conjunto finito cuyos elementos llamaremos estados. 
+- ?       es un alfabeto que llamamos alfabeto de entrada. 
+- q0?Q    es un estado señalado que llamamos estado inicial. 
+- F       es un subconjunto de Q no vacío, cuyos elementos llamamos estados finales. 
+- ?       es una aplicación de Q×??Q , que llamamos función de transición. 
+
+por ejemplo:
+Tenemos un alfabeto ? = {a, b, c}, entonces en la matriz de transición tomara la letra 'a' como indice 0 , letra 'b' indice 1 y letra 'c' indice 2.
+
+tb de transiciones
+ 1---0
+s1  s1  s2--------------0 --> 1*s1 ---0>---  s2*1
+s2  s1  s2-----------------------------|_____0<_____|
+
+![automata](https://www.matesfacil.com/automatas-lenguajes/automatas/autom1.png)
+
+**EJEMPLO**
+
+```c++
+void MostrarEstados(vector<int> v){
+    cout << "\n\n ESTADOS DEL AUTOMATA \n\n";
+    for(int i=0; i<v.size(); i++){
+        cout << " " << i <<"  -->  q" << v[i] << endl;
+    }
+}
+
+void IngresaAutomata(vector<int> &E, vector<char> &S, int T[MAX][MAX]){
+
+    int numE;  // Numero de estados
+    int numS;  // Numero de simbolos
+    char c;
+
+    // Generando estados
+    cout << "\n Cantidad de Estados: ";
+    cin >> numE;
+    for(int i=0; i<numE; i++){
+        E.push_back(i);
+    }
+
+    // Ingresando simbolos
+    cout << "\n Cantidad de Simbolos: "; cin >> numS;
+    cout << endl;
+    for(int i=0; i<numS; i++){
+        cout << "\t Simbolo " << i+1 << " : ";
+        cin >> c;
+        S.push_back(c);
+    }
+    sort(S.begin(),S.end());  // Ordenando simbolos
+
+    // Ingresando tabla de transiciones
+    cout << "\n INGRESE TABLA DE TRANSICIONES \n\n";
+    for(int i=0; i<numE; i++){
+        for(int j=0; j<numS; j++){
+            cout << "\t T["<<i<<"]["<<j<<"] : ";
+            cin >> T[i][j];
+        }
+    }
+
+    // Mostrando tabla de transiciones
+    cout << "\n\n TABLA DE TRANSICIONES \n\n";
+    for(int i=0; i<numE; i++){
+        for(int j=0; j<numS; j++){
+            cout << "\t" << T[i][j] << "  ";
+        }
+        cout << endl;
+    }
+}
+bool VerificarPalabra(vector<int> w, int T[MAX][MAX], int q0, vector<int>qf){
+
+    int q, s;
+    q = q0;
+    bool EstadoVerificacion = false;
+
+    for(int i=0; i<w.size(); i++){
+        s = w[i];
+        q = T[q][s];
+    }
+
+    for(int i=0; i<qf.size(); i++){
+        if(q==qf[i]){
+            EstadoVerificacion = true;
+            break;
+        }
+    }
+    return EstadoVerificacion;
+}
+
+void ConvertirPalabra(string palabra, vector<char>S, vector<int>&w){
+
+    int i, k=0;
+
+    while(w.size()!=palabra.length()){
+        for(i=0; i<S.size(); i++){
+            if(palabra[k]==S[i]){
+                w.push_back(i);
+            }
+        }
+        k++;
+    }
+}
+```
