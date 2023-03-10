@@ -362,7 +362,7 @@ int main()
 ```
 #PUNTEROS
 
-
+![Punteros](https://i0.wp.com/somoshackersdelaprogramacion.es/wp-content/uploads/2022/06/puntero.png?resize=596%2C199&ssl=1)
 Un puntero es una variable que almacena la dirección de memoria de un objeto. Los punteros se usan ampliamente en C y C++ para tres propósitos principales:
 
 - para asignar nuevos objetos en el montón,
@@ -478,7 +478,7 @@ void showArrayVector(){
 ```
 ##MEMORIA CON PUNTEROS
 
-![MEMORIA] (C:\Users\fabia\Desktop\Programación I\Ejercicio_Escalera\include\Captura.PNG)
+![MEMORIA](https://1.bp.blogspot.com/-gKWUcwIKWWU/VvPtKUAIFjI/AAAAAAAAFRc/WLCqWfSxlZ4ioocmBuFS3KaRhzs0I13OA/w1200-h630-p-k-no-nu/Difference%2Bbetween%2Bstack%2Band%2Bheap%2Bmemory%2Bin%2BJava.gifG)
 
 
 
@@ -521,5 +521,6 @@ con la herramienta puntero nos servira para poder reservar espacios de memoria q
         return m;
     }
 ```
+
 
 
