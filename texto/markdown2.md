@@ -373,6 +373,18 @@ Un puntero es una variable que almacena la dirección de memoria de un objeto. Lo
 Un puntero básico es un puntero cuya duración no está controlada por un objeto encapsulado, como un puntero inteligente. Se puede asignar un puntero básico a la dirección de otra variable que no sea de puntero, o bien se le puede asignar un valor de nullptr. Un puntero al que no se ha asignado un valor contiene datos aleatorios.
 
 También se puede desreferenciar un puntero para recuperar el valor del objeto al que apunta. El operador de acceso a miembros proporciona acceso a los miembros de un objeto.
+
+##Los punteros y el ampersand &
+El ampersand es un operador de C/C++ y es comúnmente utilizado para los punteros.
+Este operador nos permite obtener la dirección de memoria de una variable cualquiera y es justo esto
+(la dirección en memoria) lo que utilizan los punteros para referenciar valores.
+
+##Los apuntadores y el asterisco *
+El asterisco es, por decirlo de alguna forma, el operador por excelencia de los punteros.
+SU utilidad radica en que si el valor de dicho apuntador corresponde a una dirección de memoria, el
+asterisco nos permite resolverla y acceder al valor almacenado allí. Viéndolo desde otro enfoque, un
+apuntador es únicamente una dirección de memoria (un número).
+el asterisco es el que hace la magia de obtener el valor referenciado por dicha dirección.
 ##Punteros + Matriz
 
 **EJEMPLOS DE PUNTEROS + MATRICES**
@@ -465,6 +477,11 @@ void showArrayVector(){
 }
 ```
 ##MEMORIA CON PUNTEROS
+
+![MEMORIA] (C:\Users\fabia\Desktop\Programación I\Ejercicio_Escalera\include\Captura.PNG)
+
+
+
 
 con la herramienta puntero nos servira para poder reservar espacios de memoria que posteriormente seran usados. Para ello se pueden usar distintas funciones que reservaran ese esapacio de memoria.
 
